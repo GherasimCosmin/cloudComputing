@@ -111,8 +111,6 @@ function getAll(response, request) {
         response.end(err);
     });
 
-    const { headers, method, url } = request;
-
     let body = {};
     body.personList = mockDb.personList;
 
@@ -126,7 +124,7 @@ function getAll(response, request) {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'application/json');
 
-    response.end(JSON.stringify(body.personList));
+    response.end(body.personList);
 }
 function getById(response, request, id) {
 
@@ -410,5 +408,3 @@ function getByHobby(response, request, hobby) {
 
     response.end(JSON.stringify(body.response));
 }
-
-////////////////////inca una: get by hobby
