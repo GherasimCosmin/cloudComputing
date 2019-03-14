@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "e779c6b9-0ce9-40e0-8d6f-c643bfdb77d5",
+		"name": "Cloud Computing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8889/persons/getAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8889/persons/getAll",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"persons",
+						"getAll"
+					]
+				},
+				"description": "GET getAll"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8889/persons/getById=6",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8889/persons/getById=6",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"persons",
+						"getById=6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8889/persons/addNew",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"person1\",\n\t\"id\":6,\n\t\"hobby\":\"test\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8889/persons/addNew",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"persons",
+						"addNew"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8889/persons/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":6,\n\t\"name\":\"Person6\",\n\t\"hobby\":\"Traveling\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8889/persons/update",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"persons",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8889/persons/delete=2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8889/persons/delete=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"persons",
+						"delete=2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8889/persons/getByHobby=Traveling",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8889/persons/getByHobby=Traveling",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"persons",
+						"getByHobby=Traveling"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
