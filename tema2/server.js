@@ -15,59 +15,73 @@ http.createServer(function (request, response, error) {
 
         if (pathAndValue[1].length > 0) {
             getById(response, request, parseInt(pathAndValue[1]));
+            return;
         }
 
         response.statusCode = 400;
-        response.end("Bad Request \nExample: /persons/getById=<number>")
+        response.end("Bad Request \nExample: /persons/getById=<number>");
+        return;
     }
 
     if (request.method === 'GET' && request.url === '/persons/getAll') {
         getAll(response, request);
+        return;
     }
 
     if (request.method === 'GET' && request.url === '/persons/getByHobby=' + pathAndValue[1]) {
         if (pathAndValue[1].length > 0) {
             getByHobby(response, request, pathAndValue[1]);
+            return;
         }
 
         response.statusCode = 400;
-        response.end("Bad Request \nExample: /persons/getByHobby=<hobby>")
+        response.end("Bad Request \nExample: /persons/getByHobby=<hobby>");
+        return;
     }
 
     if (request.method === 'POST' && request.url === '/persons/addNew') {
         addNew(response, request);
+        return;
     }
 
     if (request.method === 'PUT' && request.url === '/persons/update') {
         update(response, request);
+        return;
     }
 
     if (request.method === 'DELETE' && request.url === '/persons/delete=' + pathAndValue[1]) {
 
         if (pathAndValue[1].length > 0) {
             deletePerson(response, request, parseInt(pathAndValue[1]));
+            return;
         }
 
         response.statusCode = 400;
-        response.end("Bad Request \nExample: /persons/delete=<number>")
+        response.end("Bad Request \nExample: /persons/delete=<number>");
+        return;
     }
 
-    if (request.method === 'DELETE' && request.url === '/persons/getById') {
+
+
+
+    if (request.method === 'GET' && request.url === '/persons/getById') {
 
         response.statusCode = 400;
-        response.end("Bad Request \nExample: /persons/getById=<number>")
+        response.end("Bad Request \nExample: /persons/getById=<number>");
+        return;
 
     }
 
     if (request.method === 'DELETE' && request.url === '/persons/delete') {
 
         response.statusCode = 400;
-        response.end("Bad Request \nExample: /persons/delete=<number>")
+        response.end("Bad Request \nExample: /persons/delete=<number>");
+        return;
 
     }
 
     response.statusCode = 400;
-    response.end("Bad Request \nAvaible Requests:\n\t/persons/getAll\n\t/persons/getById=<number>\n\t/persons/getByHobby=<hobby>\n\t/persons/addNew\n\t/persons/update\n\t/persons/delete=<number>")
+    response.end("Bad Request \nAvaible Requests:\n\t/persons/getAll\n\t/persons/getById=<number>\n\t/persons/getByHobby=<hobby>\n\t/persons/addNew\n\t/persons/update\n\t/persons/delete=<number>");
 
 }).listen(8889);
 
@@ -124,7 +138,7 @@ function getAll(response, request) {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'application/json');
 
-    response.end(body.personList);
+    response.end(JSON.stringify(body.personList));
 }
 function getById(response, request, id) {
 
@@ -175,8 +189,14 @@ function addNew(response, request) {
             body += chunk.toString();
         })
         .on('end', (err) => {
+            try{
             body = JSON.parse(body);
-
+            }
+            catch(e){
+                response.statusCode = 400;
+                response.end("Bad Request");
+                return;
+            }
 
             if (body == null) {
                 response.statusCode = 400;
@@ -210,7 +230,7 @@ function addNew(response, request) {
             });
 
             if (responseObject.person != null) {
-                response.statusCode = 400;
+                response.statusCode = 409;
                 response.end("Person already in DB");
                 return;
             }
