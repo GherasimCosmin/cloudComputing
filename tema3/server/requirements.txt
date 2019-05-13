@@ -1,0 +1,12 @@
+Flask-SQLAlchemy==2.3.2
+google-cloud-translate
+google-cloud-language
+google-cloud-storage
+google-cloud-vision
+psycopg2==2.7.7
+Flask-RESTful
+Flask==1.0.2
+flask-cors
+typeguard
+pycountry
+sendgrid
