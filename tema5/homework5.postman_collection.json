@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "e2e5fc60-eac1-4326-8612-f649578900e7",
+		"name": "homework5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:1337/translate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lang\":\"de\",\n\t\"text\":\"another\"\n}"
+				},
+				"url": {
+					"raw": "localhost:1337/translate",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"translate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:1337/searchImage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\":\"dog\"\n}"
+				},
+				"url": {
+					"raw": "localhost:1337/searchImage",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"searchImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:1337/analyzeImage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"url\":\"https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg\"\n}"
+				},
+				"url": {
+					"raw": "localhost:1337/analyzeImage",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"analyzeImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:1337/faceDetection",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"url\":\"https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg\"\n}"
+				},
+				"url": {
+					"raw": "localhost:1337/faceDetection",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"faceDetection"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:1337/spellCheck",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\": \"hel wrld\"\n}"
+				},
+				"url": {
+					"raw": "https://homework4cc.azurewebsites.net:1337/spellCheck",
+					"protocol": "https",
+					"host": [
+						"homework4cc",
+						"azurewebsites",
+						"net"
+					],
+					"port": "1337",
+					"path": [
+						"spellCheck"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
